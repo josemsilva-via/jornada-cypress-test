@@ -1,56 +1,36 @@
 /// <reference types="cypress" />
+import usuarios from "../../fixtures/usuarios.json"
 const faker = require('faker-br')
 
-var nome = faker.name.firstName() + ' ' + faker.name.lastName();
-var email= faker.internet.email()
-var senha = "teste@123"
-console.log('Nome: '+ nome + ' Email: ' + email)
+const nome = usuarios[0].nome
+const email= usuarios[0].email
+const senha = usuarios[0].senha
+
+cy.log('Nome: '+ nome + ' Email: ' + email)
 
 describe('US0002 - Funcionalidade: Cadastro', () => {
-    
-    //antes de tudo
-    before(() => {
-        
-    });
-
-    //antes de cada cenário
-    beforeEach(() => {
-        cy.visit('cadastrar')
-    });   
-
-    //depois de tudo
-    after(() => {
-        
-    });
-
-    //depois de cada cenário
-    afterEach(() => {
-        
-    });
 
     it('Deve fazer cadastro com sucesso', () => {
-        cy.cadastro(nome,email,senha)
-
-        //Resultado esperado
+        cy.cadastro(nome,email,senha)        
         cy.get('.large').should('contain','Dashboard')
-
     });
 });
 
 /*
-  Funcionalidade: Login
+  Funcionalidade: Cadastro
+  
   Eu como usuário das Conexões QA
-  Quero fazer login
-  Para editar meu perfil
+  Quero me cadastrar no sistema
+  Para acessar a tela de dasboard
 
-  Cenário: Login com sucesso
+  Cenário: Cadastro criado com sucesso
 
-  Arrange - Dado - Pré-requisito - Dado que eu esteja na tela de login
-  Action - Quando - Ação do usuário - Quando eu inserir usuário e senha
+  Arrange - Dado - Pré-requisito - Dado que eu esteja na tela de cadastro
+  Action - Quando - Ação do usuário - Quando eu inserir nome, email e senha
   Assert - Então - Resultado esperado - Então deve me direcionar para o Dashboard
 
-  Cenário: Validar msg de erro
+  Cenário: Validar cadastro duplicado
 
-  Cenário: Recuperar senha
+  Cenário: Excluir cadastro
 
 */

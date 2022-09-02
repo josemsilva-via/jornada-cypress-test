@@ -1,27 +1,37 @@
 
 /// <reference types="cypress" />
+import usuarios from "../../fixtures/usuarios.json"
+
 
 describe('US0001 - Funcionalidade: Login', () =>{
 
-    beforeEach(() => {
-      cy.visit('login')
-    });
-
     it ('Deve fazer login com sucesso', () => {    
-        cy.login('usuarioteste01@bootcamp.com','test@bootcamp')          
+        cy.login(usuarios[0].email,usuarios[0].senha)          
         cy.get('[data-test="dashboard-welcome"]').should('contain', 'Bem-vindo Usuario Teste 01')
-        
+        cy.title().should('eq','ConexaoQA')              
     })
 
-    it('Validar mensagem de erro quando inserir usuário ou senha inválidos', () => {      
-      cy.login('usuarioteste01@bootcamp','test@bootcamp')  
+    it('Dev validar mensagem de erro quando inserir usuário ou senha inválidos', () => {      
+      cy.login("emailinvalido@bootcamp.com",usuarios[0].senha)   
       cy.get('[data-test="alert"]').should('contain','Credenciais inválidas')
     });
 
+    it.only('Deve fazer login com sucesso - Usando importação', () => {    
+      cy.login(usuarios[0].email, usuarios[0].senha)                
+      cy.title().should('eq','ConexaoQA')      
+    });
+
+    it('Deve fazer login com sucesso - Usando fixture', () => {   
+      cy.fixture("usuarios").then((users) => {
+        cy.login(users[1].email, users[1].senha)  
+      })                    
+      cy.title().should('eq','ConexaoQA')      
+    });
 })
 
 /*
   Funcionalidade: Login
+  
   Eu como usuário das Conexões QA
   Quero fazer login
   Para editar meu perfil
@@ -39,8 +49,9 @@ describe('US0001 - Funcionalidade: Login', () =>{
 
   Exemplo:
   | usuário | senha |
-  | "usuarioteste01@bootcamp.com" | "teste@123"
-  | "usuarioteste02@bootcamp.com" | "teste2@123"
+  | "usuarioteste01@bootcamp.com" | "test@bootcamp"
+  | "usuarioteste02@bootcamp.com" | "test@bootcamp"
+  | "usuarioteste03@bootcamp.com" | "test@bootcamp"  
 
   Cenário: Validar msg de erro
 

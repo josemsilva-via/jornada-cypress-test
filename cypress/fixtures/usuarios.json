@@ -1,0 +1,18 @@
+[
+  {
+    "nome"  : "Usuário teste 1",
+    "email" : "usuarioteste01@bootcamp.com",
+    "senha" : "test@bootcamp"
+  },   
+  {
+    "nome"  : "Usuário teste 2",
+    "email" : "usuarioteste02@bootcamp.com",
+    "senha" : "test@bootcamp"
+  },   
+  {
+    "nome"  : "Usuário teste 3",
+    "email" : "usuarioteste03@bootcamp.com",
+    "senha" : "test@bootcamp"
+  }
+
+]

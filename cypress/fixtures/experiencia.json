@@ -1,0 +1,28 @@
+[
+  {
+    "posicao"  : "QA",
+    "empresa" : "Via",
+    "local" : "São Paulo",
+    "dataInicio" : "01/01/2020",
+    "dataFim" : "12/12/2020",
+    "descricao" : "Analista de Qualidade Junior"
+  },   
+  {
+    "posicao"  : "QA",
+    "empresa" : "Via",
+    "local" : "São Paulo",
+    "dataInicio" : "01/01/2021",
+    "dataFim" : "12/06/2021",
+    "descricao" : "Analista de Qualidade Pleno"
+  },  
+  {
+    "posicao"  : "QA",
+    "empresa" : "Via",
+    "local" : "São Paulo",
+    "dataInicio" : "13/06/2021",
+    "dataFim" : "",
+    "descricao" : "Analista de Qualidade Sênior"
+  } 
+
+]
+

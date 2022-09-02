@@ -1,50 +1,30 @@
 /// <reference types="cypress" />
+import usuarios from "../../fixtures/usuarios.json"
 const faker = require('faker-br')
 
-var nome = faker.name.firstName() + ' ' + faker.name.lastName();
-var email= faker.internet.email()
-var senha = "teste@123"
-var empresa = faker.company.companyName()
-var website = faker.internet.url()
-var localidade = [faker.address.city(), faker.address.city(), faker.address.city()]
-var status = ["Estudante ou Aprendendo", "QA Junior", "QA Pleno", "QA Senior"]
-var statusIndex = Math.floor(Math.random() * status.length-1);
-var localidadeIndex  = Math.floor(Math.random() * localidade.length-1);
-var conhecimentos = faker.lorem.words()
-var biografia=  faker.lorem.sentence()
+const empresa = faker.company.companyName()
+const website = faker.internet.url()
+const localidade = [faker.address.city(), faker.address.city(), faker.address.city()]
+const status = ["Estudante ou Aprendendo", "QA Junior", "QA Pleno", "QA Senior"]
+const statusIndex = Math.floor(Math.random() * status.length-1);
+const localidadeIndex  = Math.floor(Math.random() * localidade.length-1);
+const conhecimentos = faker.lorem.word() + ',' + faker.lorem.word() + ',' + faker.lorem.word()
+const biografia=  faker.lorem.sentence()
 
-console.log(email)
 
 describe('US0003 - Funcionalidade: Criar Perfil', () => {
     
-    //antes de tudo
-    before(() => {
-       
-    });
-
-    //antes de cada cenário
-    beforeEach(() => {
-        cy.visit('cadastrar')           
-    });   
-
-    //depois de tudo
-    after(() => {
-        
-    });
-
-    //depois de cada cenário
-    afterEach(() => {
-        
-    });
+    beforeEach(() => {      
+        cy.login(usuarios[0].email,usuarios[0].senha)         
+    });      
 
     it('Deve criar perfil com sucesso', () => {
-       
-        cy.cadastro(nome,email,senha)
-        
+             
         cy.criarPerfil(status[statusIndex], empresa, website, localidade[localidadeIndex], conhecimentos, biografia)
        
         cy.get('[data-test="alert"]').should('contain', 'Perfil Criado')
 
+        //cy.get('[data-test="dashboard-deleteProfile"]').click()
     });
 });
 
