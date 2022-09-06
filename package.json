@@ -21,7 +21,7 @@
   ],
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "2.23.0",
-    "cypress": "10.4.0",
+    "cypress": "^10.4.0",
     "cypress-grep": "2.13.1",
     "cypress-xpath": "1.6.2",
     "faker-br": "^0.4.1"
