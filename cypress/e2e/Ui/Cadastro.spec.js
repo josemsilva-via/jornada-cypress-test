@@ -2,15 +2,16 @@
 import usuarios from "../../fixtures/usuarios.json"
 const faker = require('faker-br')
 
-const nome = usuarios[0].nome
-const email= usuarios[0].email
-const senha = usuarios[0].senha
-
-cy.log('Nome: '+ nome + ' Email: ' + email)
-
 describe('US0002 - Funcionalidade: Cadastro', () => {
-
+    
     it('Deve fazer cadastro com sucesso', () => {
+
+        const nome = usuarios[0].nome
+        const email= usuarios[0].email
+        const senha = usuarios[0].senha
+
+        cy.log('Nome: '+ nome + ' Email: ' + email)
+
         cy.cadastro(nome,email,senha)        
         cy.get('.large').should('contain','Dashboard')
     });

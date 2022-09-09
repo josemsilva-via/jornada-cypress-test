@@ -1,0 +1,47 @@
+[
+{
+    "company": "ViaHub",
+    "status": "QA Junior",
+    "location": "São Paulo",
+    "website": "https://www.viahub.com.br/",
+    "skills": "Carros, Metodologias ágeis, Colaboração e comunicação, Comprometimento",
+    "bio": "Gosto de carros e de testes",
+    "githubusername": "viavarejo",
+    "youtube": "https://www.youtube.com/c/ViaHubTecnologia",
+    "twitter": "https://twitter.com/viahubtech",
+    "facebook": "https://pt-br.facebook.com/viahubtech/",
+    "linkedin": "https://www.linkedin.com/company/viahubtecnologia/",
+    "instagram": "https://www.instagram.com/viahub.tech/",
+    "medium": "https://medium.com/viahub"
+},
+{
+    "company": "ViaHub",
+    "status": "QA Pleno",
+    "location": "São Paulo",
+    "website": "https://www.viahub.com.br/",
+    "skills": "Metodologias ágeis, Automação de testes, Banco de Dados, Behavior Driven Development (BDD)",
+    "bio": "Atuei 1 ano como QA Júnior e...",
+    "githubusername": "viavarejo",
+    "youtube": "https://www.youtube.com/c/ViaHubTecnologia",
+    "twitter": "https://twitter.com/viahubtech",
+    "facebook": "https://pt-br.facebook.com/viahubtech/",
+    "linkedin": "https://www.linkedin.com/company/viahubtecnologia/",
+    "instagram": "https://www.instagram.com/viahub.tech/",
+    "medium": "https://medium.com/viahub"
+},
+  {
+    "company": "ViaHub",
+    "status": "QA Senior",
+    "location": "São Paulo",
+    "website": "https://www.viahub.com.br/",
+    "skills": "Metodologias ágeis, Tipos e estratégias de testes, Visão Estratégica,Automação de testes, Behavior Driven Development (BDD), Continuous Integration ",
+    "bio": "Atuei 1 ano como QA Pleno e...",
+    "githubusername": "viavarejo",
+    "youtube": "https://www.youtube.com/c/ViaHubTecnologia",
+    "twitter": "https://twitter.com/viahubtech",
+    "facebook": "https://pt-br.facebook.com/viahubtech/",
+    "linkedin": "https://www.linkedin.com/company/viahubtecnologia/",
+    "instagram": "https://www.instagram.com/viahub.tech/",
+    "medium": "https://medium.com/viahub"
+  }
+]

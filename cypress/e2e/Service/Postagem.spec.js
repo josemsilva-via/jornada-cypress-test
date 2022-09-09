@@ -54,7 +54,7 @@ describe('Consulta', () => {
         
         cy.criarPostagem(token,"PostagemID").then((response) =>{
         
-            let id= response.body._id
+            const id= response.body._id
 
             cy.request({
                 method: 'GET',
@@ -84,7 +84,7 @@ describe('Exclusão', () => {
         
         cy.criarPostagem(token,"PostagemID").then((response) =>{
         
-            let id= response.body._id
+            const id= response.body._id
 
             cy.request({
                 method: 'DELETE',
@@ -113,7 +113,7 @@ describe('Alteração', () => {
         
         cy.criarPostagem(token,"PostagemID").then((response) =>{
         
-            let id= response.body._id
+            const id= response.body._id
 
             cy.request({
                 method: 'PUT',
@@ -128,3 +128,4 @@ describe('Alteração', () => {
     })
 
 });
+

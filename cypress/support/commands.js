@@ -90,3 +90,55 @@ Cypress.Commands.add('criarPostagem', (token, value) => {
         }
     })
 })
+
+Cypress.Commands.add('criarPerfilApi', (token, perfil) => { 
+    cy.request({
+        method: 'POST',
+        url: '/api/profile',
+        headers: {
+            Cookie: token
+        },
+        body: perfil
+        }).then((response) => {
+        return response.body         
+    })    
+})
+
+Cypress.Commands.add('consultarPerfilAtualApi', (token) => { 
+    cy.request({
+        method: 'GET',
+        url: '/api/profile/me',
+        headers: {
+            Cookie: token
+        }}).then((response) => {
+            return response.body         
+        })
+})
+
+Cypress.Commands.add('adicionarExperienciaApi', (token, experiencia) => { 
+    cy.request({
+        method: 'PUT',
+        url: 'api/profile/experience',  
+        headers: {
+            Cookie: token
+        },       
+        body: experiencia        
+        }).then((response) => {
+            return response         
+        })
+})
+
+Cypress.Commands.add('adicionarFormacaoApi', (token, formacao) => { 
+    cy.request({
+        method: 'PUT',
+        url: '/api/profile/education',  
+        headers: {
+            Cookie: token
+        },
+        body: formacao
+        }).then((response) => {
+            return response         
+        })
+})
+
+
